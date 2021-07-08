@@ -1,1 +1,2 @@
 微信小程序采用uni-app框架实现
+后端采用java语言，Springboot框架
