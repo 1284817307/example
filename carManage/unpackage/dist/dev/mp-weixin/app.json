@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/manage/manage",
+    "pages/authentication/authentication",
+    "pages/maintain/maintain",
+    "pages/director/index/index",
+    "pages/login/login"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/director/index/index",
+        "iconPath": "static/main2.png",
+        "selectedIconPath": "static/mainHL2.png",
+        "text": "index"
+      },
+      {
+        "pagePath": "pages/login/login",
+        "text": "unset"
+      },
+      {
+        "pagePath": "pages/director/index/index",
+        "iconPath": "static/main2.png",
+        "selectedIconPath": "static/mainHL2.png",
+        "text": "index"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}
