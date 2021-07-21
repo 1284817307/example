@@ -96,10 +96,10 @@ var components
 try {
   components = {
     uniNoticeBar: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-notice-bar/components/uni-notice-bar/uni-notice-bar */ "uni_modules/uni-notice-bar/components/uni-notice-bar/uni-notice-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-notice-bar/components/uni-notice-bar/uni-notice-bar.vue */ 107))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-notice-bar/components/uni-notice-bar/uni-notice-bar */ "uni_modules/uni-notice-bar/components/uni-notice-bar/uni-notice-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-notice-bar/components/uni-notice-bar/uni-notice-bar.vue */ 120))
     },
     uniBadge: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-badge/components/uni-badge/uni-badge */ "uni_modules/uni-badge/components/uni-badge/uni-badge").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-badge/components/uni-badge/uni-badge.vue */ 114))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-badge/components/uni-badge/uni-badge */ "uni_modules/uni-badge/components/uni-badge/uni-badge").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-badge/components/uni-badge/uni-badge.vue */ 127))
     }
   }
 } catch (e) {
@@ -195,13 +195,27 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 var _default =
 {
+  created: function created() {
+    var _this = this;
+    uni.showToast({
+      title: '获取消息中',
+      icon: 'loading',
+      duration: 1500
+      //这里填写接口，获取消息，然后以红点显示出来
+    });
+  },
   data: function data() {
     return {
       text: '新增信息',
-      meunsList: [
-      {
+      meunsList: [{
         icon: "/static/exam.png",
         msg: "审批",
         id: "examine" },

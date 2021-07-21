@@ -1,11 +1,14 @@
 <template>
+	
 	<view class='content'>
 		<view class='item'>
 			<label class='title'>查勘车辆管理系统</label>
 			<button class="submit" type='primary' @click="toLogin" :disabled='!checked'>还未登录，去登录授权</button>
 			<checkbox class="check" value='agree' :checked='checked' @click="change">我同意</checkbox>
 			<view class='text' @click="show">此用户条款</view>
+			
 		</view>
+		
 	</view>
 </template>
 
@@ -28,8 +31,8 @@
 					success() {
 						if(_this.$store.state.userInfo.position==='管理人'){
 							setTimeout(function() {
-							uni.redirectTo({
-								url: '../manage/manage'
+							uni.switchTab({
+								url: '../manage/index/index'
 							})
 						}, 1000)
 						}

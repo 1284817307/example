@@ -872,7 +872,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"carManage","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"carManage","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -2076,6 +2076,7 @@ new _vuex.default.Store({
     LOGIN: function LOGIN(state, _ref) {var _ref2 = _slicedToArray(_ref, 3),name = _ref2[0],no = _ref2[1],position = _ref2[2];
       state.userInfo.name = name;
       state.userInfo.no = no;
+      state.userInfo.position = position;
       uni.setStorageSync('name', name);
       uni.setStorageSync('no', no);
       uni.setStorageSync('position', position);
@@ -3209,7 +3210,58 @@ var index = {
 
 /***/ }),
 
-/***/ 126:
+/***/ 13:
+/*!************************************!*\
+  !*** E:/VueCode/carManage/mock.js ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Mock = __webpack_require__(/*! better-mock/dist/mock.mp.js */ 14);
+
+var Result = {
+  code: "200",
+  msg: '操作成功',
+  data: '返回data',
+  token: '返回token' };
+
+
+Mock.mock('/try', 'GET', function () {
+  return Result;
+});
+
+Mock.mock('/login', 'POST', function () {
+  var Result = {
+    status: '正确' };
+
+
+  return Result;
+
+});
+
+Mock.mock('/authentication', 'POST', function (option) {
+
+  console.log(option);
+  return Result;
+
+
+});
+
+
+
+
+
+Mock.mock('/protect', 'POST', function () {
+  var Rq = {
+    status: "1",
+    msg: [{ id: '浙A3423432', time: '2021/1/1' }, { id: '浙A575758', time: '2021/2/2' }] };
+
+  return Rq;
+});
+
+/***/ }),
+
+/***/ 139:
 /*!********************************************************************************!*\
   !*** E:/VueCode/carManage/uni_modules/uni-icons/components/uni-icons/icons.js ***!
   \********************************************************************************/
@@ -3348,57 +3400,6 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   "cloud-download-filled": "\uE8E9",
   "headphones": "\uE8BF",
   "shop": "\uE609" };exports.default = _default;
-
-/***/ }),
-
-/***/ 13:
-/*!************************************!*\
-  !*** E:/VueCode/carManage/mock.js ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-var Mock = __webpack_require__(/*! better-mock/dist/mock.mp.js */ 14);
-
-var Result = {
-  code: "200",
-  msg: '操作成功',
-  data: '返回data',
-  token: '返回token' };
-
-
-Mock.mock('/try', 'GET', function () {
-  return Result;
-});
-
-Mock.mock('/login', 'POST', function () {
-  var Result = {
-    status: '正确' };
-
-
-  return Result;
-
-});
-
-Mock.mock('/authentication', 'POST', function (option) {
-
-  console.log(option);
-  return Result;
-
-
-});
-
-
-
-
-
-Mock.mock('/protect', 'POST', function () {
-  var Rq = {
-    status: "1",
-    msg: [{ id: '浙A3423432', time: '2021/1/1' }, { id: '浙A575758', time: '2021/2/2' }] };
-
-  return Rq;
-});
 
 /***/ }),
 
@@ -17425,7 +17426,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"carManage","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"carManage","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -17446,14 +17447,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"carManage","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"carManage","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"carManage","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"carManage","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -17539,7 +17540,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"carManage","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"carManage","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -18780,7 +18781,7 @@ if (hadRuntime) {
 
 /***/ }),
 
-/***/ 83:
+/***/ 96:
 /*!***********************************************************************************!*\
   !*** E:/VueCode/carManage/uni_modules/uni-forms/components/uni-forms/validate.js ***!
   \***********************************************************************************/

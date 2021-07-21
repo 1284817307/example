@@ -5,7 +5,9 @@
     "pages/authentication/authentication",
     "pages/maintain/maintain",
     "pages/director/index/index",
-    "pages/login/login"
+    "pages/manage/index/index",
+    "pages/login/login",
+    "pages/common/userinfo/userinfo"
   ],
   "subPackages": [],
   "window": {
@@ -23,22 +25,19 @@
     "list": [
       {
         "pagePath": "pages/director/index/index",
-        "iconPath": "static/main2.png",
-        "selectedIconPath": "static/mainHL2.png",
         "text": "index"
       },
       {
-        "pagePath": "pages/login/login",
-        "text": "unset"
+        "pagePath": "pages/manage/index/index",
+        "text": "index"
       },
       {
-        "pagePath": "pages/director/index/index",
-        "iconPath": "static/main2.png",
-        "selectedIconPath": "static/mainHL2.png",
-        "text": "index"
+        "pagePath": "pages/common/userinfo/userinfo",
+        "text": "userinfo"
       }
     ]
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {
+    "tab-bar": "/pages/common/tabBar"
+  }
 }

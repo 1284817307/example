@@ -1,0 +1,1 @@
+<view><tab-bar vue-id="6c29953c-1" pagePath="pages/common/userinfo/userinfo" bind:__l="__l"></tab-bar></view>

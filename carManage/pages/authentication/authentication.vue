@@ -11,7 +11,7 @@
 						v-model="authForm.realname"></uni-easyinput>
 				</uni-forms-item>
 				<uni-forms-item label="工作证" required labelAlign="center">
-					<uni-easyinput placeholder="请输入您的值工号" name="no" v-model="authForm.no" maxlength="10">
+					<uni-easyinput placeholder="请输入您的职工号" name="no" v-model="authForm.no" maxlength="10">
 					</uni-easyinput>
 				</uni-forms-item>
 				<uni-forms-item name="job">
@@ -151,8 +151,7 @@
 							console.log(res);
 							if (res.data.code === '200') {
 								_this.$store.commit('SETTOKEN', res.data.token);
-								_this.$store.commit('LOGIN',[ _this.authForm.realname, _this.authForm.no,pos]);
-								
+								_this.$store.commit('LOGIN',[_this.authForm.realname,_this.authForm.no,pos]);
 								_this.$store.state.hasLogin = true;
 								console.log(_this.$store.state);
 								uni.showToast({
@@ -168,15 +167,14 @@
 											})
 										}
 										if (pos === "负责人") {
-											console.log('to index')
 											uni.switchTab({
 												url:'../director/index/index'
 											})
 										}
 										if (pos === "管理人") {
 											setTimeout(function() {
-												uni.redirectTo({
-													url: '../manage/manage' //跳转到界面，此url为测试用
+												uni.switchTab({
+													url: '../manage/index/index' //跳转到界面，此url为测试用
 												})
 											}, 1000)
 										}

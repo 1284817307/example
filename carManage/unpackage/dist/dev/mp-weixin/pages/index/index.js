@@ -150,6 +150,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -169,8 +172,8 @@ var _default =
         success: function success() {
           if (_this.$store.state.userInfo.position === '管理人') {
             setTimeout(function () {
-              uni.redirectTo({
-                url: '../manage/manage' });
+              uni.switchTab({
+                url: '../manage/index/index' });
 
             }, 1000);
           }

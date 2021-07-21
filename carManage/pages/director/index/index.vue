@@ -1,5 +1,6 @@
 <template>
 	<view>
+
 		<view class="top">
 			<view class="uni-flex uni-row">
 				<image src="../../../static/carbody.png" style="width: 220rpx;height: 180rpx;"></image>
@@ -8,22 +9,24 @@
 					中华行</text>
 			</view>
 			<view>
-				<uni-notice-bar  single="true"
-					scrollable="true"  v-if="text" :text="text"></uni-notice-bar>
+				<uni-notice-bar single="true" scrollable="true" v-if="text" :text="text"></uni-notice-bar>
 			</view>
 		</view>
 		<view class="card">主要功能</view>
 		<view class="wrap" style="justify-content:flex-start;height: 250rpx;">
 			<view class="meuns" v-for="(item,index) in meunsList" :key="index" @click="goDetailPage(item.id)">
 				<image :src="item.icon"></image>
-				<text>{{item.msg}}</text>
+				{{item.msg}}
 			</view>
 		</view>
 		<view class="wrap" style="justify-content:flex-start;height: 250rpx;">
-			
+
 			<view class="meuns" v-for="(item,index2) in meunsList2" :key="index2" @click="goDetailPage(item.id)">
 				<uni-badge size="small" :text="1" absolute='rightTop' type="error">
-				<button type="default"><image :src="item.icon"></image></button>{{item.msg}}</uni-badge>
+					<button type="default">
+						<image :src="item.icon"></image>{{item.msg}}
+					</button>
+				</uni-badge>
 			</view>
 		</view>
 		<view class="card">车辆信息</view>
@@ -33,28 +36,39 @@
 				<image :src="item.icon"></image>
 				<text>{{item.msg}}</text>
 			</view>
+
 		</view>
+
+		<tabBar :pagePath="'pages/director/index/index'"></tabBar>
 	</view>
 </template>
 
 <script>
 	export default {
+		created() {
+			let _this = this;
+			uni.showToast({
+				title: '获取消息中',
+				icon: 'loading',
+				duration: 1500,
+				//这里填写接口，获取消息，然后以红点显示出来
+			})
+		},
 		data() {
 			return {
-				text:'新增信息',
-				meunsList: [
-					{
+				text: '新增信息',
+				meunsList: [{
 						icon: "/static/exam.png",
 						msg: "审批",
 						id: "examine"
 					},
-					
+
 					{
 						icon: "/static/data.png",
 						msg: "报表图",
 						id: "carReport"
 					},
-					
+
 					{
 						icon: "/static/message.png",
 						msg: "消息",
@@ -86,14 +100,16 @@
 					url: url
 				})
 			},
-			getMore(){
-				
+			getMore() {
+
 			}
 		}
 	}
 </script>
 
 <style>
+	@import url("../../../common/uni.css");
+
 	.wrap {
 		height: 350rpx;
 		display: flex;
@@ -147,6 +163,4 @@
 		background-color: #ffffff;
 		border-radius: 50rpx;
 	}
-	
-
 </style>

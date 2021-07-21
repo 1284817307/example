@@ -16,10 +16,11 @@ export default new Vuex.Store({
 		LOGIN(state, [name,no,position]) {
 			state.userInfo.name = name;
 			state.userInfo.no = no;
+			state.userInfo.position = position;
 			uni.setStorageSync('name', name);
 			uni.setStorageSync('no', no);
-			uni.setStorageSync('position',position)
-
+			uni.setStorageSync('position',position);
+			
 		},
 		SETTOKEN(state, token) {
 			state.token = token;
