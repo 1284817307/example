@@ -19,16 +19,6 @@
 				{{item.msg}}
 			</view>
 		</view>
-		<view class="wrap" style="justify-content:flex-start;height: 250rpx;">
-
-			<view class="meuns" v-for="(item,index2) in meunsList2" :key="index2" @click="goDetailPage(item.id)">
-				<uni-badge size="small" :text="1" absolute='rightTop' type="error">
-					<button type="default">
-						<image :src="item.icon"></image>{{item.msg}}
-					</button>
-				</uni-badge>
-			</view>
-		</view>
 		<view class="card">车辆信息</view>
 
 		<view class="wrap" style="justify-content:flex-start;height: 250rpx;">
@@ -97,7 +87,10 @@
 			goDetailPage(e) {
 				const url = '/pages/director/' + e + '/' + e
 				uni.navigateTo({
-					url: url
+					url: url,
+					fail(error){
+						console.log(error)
+					}
 				})
 			},
 			getMore() {

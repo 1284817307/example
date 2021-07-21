@@ -13,22 +13,13 @@
 			</view>
 		</view>
 		<view class="card">主要功能</view>
-		<view class="wrap" style="justify-content:flex-start;height: 250rpx;">
+		<view class="wrap" style="justify-content:flex-start;height: 280rpx;">
 			<view class="meuns" v-for="(item,index) in meunsList" :key="index" @click="goDetailPage(item.id)">
 				<image :src="item.icon"></image>
 				{{item.msg}}
 			</view>
 		</view>
-		<view class="wrap" style="justify-content:flex-start;height: 250rpx;">
 
-			<view class="meuns" v-for="(item,index2) in meunsList2" :key="index2" @click="goDetailPage(item.id)">
-				<uni-badge size="small" :text="1" absolute='rightTop' type="error">
-					<button type="default">
-						<image :src="item.icon"></image>{{item.msg}}
-					</button>
-				</uni-badge>
-			</view>
-		</view>
 		<view class="card">车辆信息</view>
 
 		<view class="wrap" style="justify-content:flex-start;height: 250rpx;">
@@ -37,6 +28,15 @@
 				<text>{{item.msg}}</text>
 			</view>
 
+		</view>
+		<view class="card">车辆信息</view>
+		
+		<view class="wrap" style="justify-content:flex-start;height: 250rpx;">
+			<view class="meuns" v-for="(item,index3) in meunsList3" :key="index3" @click="goDetailPage(item.id)">
+				<image :src="item.icon"></image>
+				<text>{{item.msg}}</text>
+			</view>
+		
 		</view>
 
 		<tabBar :pagePath="'pages/manage/index/index'"></tabBar>
@@ -57,40 +57,66 @@
 		data() {
 			return {
 				text: '新增信息',
-				meunsList: [{
-						icon: "/static/exam.png",
-						msg: "审批",
-						id: "examine"
-					},
-
-					{
-						icon: "/static/data.png",
-						msg: "报表图",
-						id: "carReport"
-					},
-
-					{
-						icon: "/static/message.png",
-						msg: "消息",
-						id: "message"
-					}
-				],
-				meunsList2: [{
-						icon: "/static/car4.png",
-						msg: "违规记录",
-						id: "violationsRecord"
-					},
-					{
-						icon: "/static/car4.png",
-						msg: "维修记录",
-						id: "fixRecord"
-					},
-					{
-						icon: "/static/car4.png",
-						msg: "保养记录",
-						id: "protectRecord"
-					},
-				],
+				meunsList:[{
+							icon:"/static/declare.png",
+							msg:"申报",
+							id:"declare"
+						},
+						{
+							icon:"/static/exam.png",
+							msg:"审批",
+							id:"examine"
+						},
+						{
+							icon:"/static/car3.png",
+							msg:"出借",
+							id:"lend"
+						},
+						{
+							icon:"/static/car3.png",
+							msg:"车辆管理",
+							id:"carManagement"
+						},
+						{
+							icon:"/static/data.png",
+							msg:"报表图",
+							id:"carReport"
+						},
+						{
+							icon:"/static/fine.png",
+							msg:"录入罚款",
+							id:"fine"
+						},
+						{
+							icon:"/static/message.png",
+							msg:"消息",
+							id:"message"
+						}
+					],
+					meunsList2:[
+						{
+							icon:"/static/car4.png",
+							msg:"违规记录",
+							id:"violationsRecord"
+						},
+						{
+							icon:"/static/car4.png",
+							msg:"维修记录",
+							id:"fixRecord"
+						},
+						{
+							icon:"/static/car4.png",
+							msg:"保养记录",
+							id:"protectRecord"
+						},
+					],
+					meunsList3:[
+						{
+							icon:"/static/record.png",
+							msg:"申报记录",
+							id:"declareRecord"
+						},
+					]
 			}
 		},
 		methods: {

@@ -2,8 +2,6 @@
 	<view class="uni-tabbar">
 		<view class="uni-tabbar__item" v-for="(item,index) in tabbar" :key="index" @tap="changeTab(item)">
 			<view class="icon" :class="[item.fontIcon , item.pagePath == pagePath?'uni-active':'']"></view>
-			<!-- 上面使用的是字体图标，解决切换页面的时候图标会闪的效果，毕竟每切换一个页面都会闪一下不太好看，可以切换使用下面的图片方式 -->
-
 			<view class="uni-tabbar__label" :class="{'active': item.pagePath == pagePath}">
 				{{item.text}}
 			</view>
@@ -61,8 +59,6 @@
 			changeTab(item) {
 
 				let page = item.pagePath;
-
-				// 这里使用reLaunch关闭所有的页面，打开新的栏目页面
 				uni.switchTab({
 					url: "../../../" + page,
 

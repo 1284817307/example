@@ -5,9 +5,16 @@
     "pages/authentication/authentication",
     "pages/maintain/maintain",
     "pages/director/index/index",
+    "pages/director/examine/examine",
+    "pages/director/examine/examDone/examDone",
+    "pages/director/examine/examToDo/examToDo",
+    "pages/director/carReport/carReport",
     "pages/manage/index/index",
     "pages/login/login",
-    "pages/common/userinfo/userinfo"
+    "pages/common/userinfo/userinfo",
+    "pages/common/userdetail/userdetail",
+    "pages/common/help/help",
+    "pages/common/about/about"
   ],
   "subPackages": [],
   "window": {
@@ -39,5 +46,6 @@
   },
   "usingComponents": {
     "tab-bar": "/pages/common/tabBar"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

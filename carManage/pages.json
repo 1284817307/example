@@ -27,6 +27,31 @@
 			}
 		},
 		{
+			"path": "pages/director/examine/examine",
+			"style": {
+				"navigationBarTitleText": "负责人审批"
+			}
+		},
+		{
+			"path": "pages/director/examine/examDone/examDone",
+			"style": {
+				"navigationBarTitleText": "负责人已审批"
+			}
+		},
+		{
+			"path": "pages/director/examine/examToDo/examToDo",
+			"style": {
+				"navigationBarTitleText": "负责人待审批"
+			}
+		},
+		{
+			"path": "pages/director/carReport/carReport",
+			"style": {
+				"navigationBarTitleText": "负责人报表图"
+			}
+		},
+		
+		{
 			"path": "pages/manage/index/index",
 			"style": {
 				"navigationBarTitleText": "管理员首页"
@@ -39,6 +64,24 @@
 			"path": "pages/common/userinfo/userinfo",
 			"style": {
 				"navigationBarTitleText": "个人信息"
+			}
+		},
+		{
+			"path":"pages/common/userdetail/userdetail",
+			"style": {
+				"navigationBarTitleText": "详细信息"
+			}
+		},
+		{
+			"path":"pages/common/help/help",
+			"style": {
+				"navigationBarTitleText": "帮助"
+			}
+		},
+		{
+			"path":"pages/common/about/about",
+			"style": {
+				"navigationBarTitleText": "关于"
 			}
 		}
 	],
